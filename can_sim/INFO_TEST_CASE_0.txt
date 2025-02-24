@@ -1,0 +1,3 @@
+MASTER -> lowest priority - 10 status commands -> 10 positive values in its file
+FUEL -> highest priority - lower bound = 20, has integer ordered in decreasing order of values from 1 to 100
+	should receive really fast status updates and after a while must send warnings to master

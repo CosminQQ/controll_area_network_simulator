@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="proj.can_sim.HelloController">
+    <children>
+        <!-- TabPane fills the full AnchorPane -->
+        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+            <tabs>
+                <!-- First Tab -->
+                <Tab text="Setup">
+                    <content>
+                        <SplitPane orientation="HORIZONTAL">
+                            <!-- Left Side: ListView -->
+                            <VBox spacing="10" prefWidth="400.0" prefHeight="750.0" alignment="CENTER">
+                                <Label text="Node List"/>
+                                <ListView fx:id="listView" prefHeight="600.0" />
+                                <Button text="Remove Selected" fx:id="removeButton" onAction="#deleteSelectedItem" />
+                            </VBox>
+
+                            <!-- Right Side: Form -->
+                            <VBox spacing="5" layoutX="5" layoutY="5" prefWidth="800.0" prefHeight="750.0">
+                                <Label text="Node Name:"/>
+                                <TextField fx:id="nodeNameField"/>
+                                <Label text="ERROR" fx:id="errorName"/>
+
+                                <Label text="Node Type:"/>
+                                <ComboBox fx:id="nodeTypeComboBox"/>
+                                <Label text="ERROR" fx:id="errorNodeType"/>
+
+                                <Label text="Lower Bound:"/>
+                                <TextField fx:id="lowerBoundField"/>
+                                <Label text="ERROR" fx:id="errorLowerBound"/>
+
+                                <Label text="Upper Bound:"/>
+                                <TextField fx:id="upperBoundField"/>
+                                <Label text="ERROR" fx:id="errorUpperBound"/>
+
+                                <Label text="Priority:"/>
+                                <ComboBox fx:id="priorityComboBox"/>
+                                <Label text="ERROR" fx:id="errorPriority"/>
+
+                                <Label text="Sensor Data:"/>
+                                <TextField fx:id="inputTextFieldFile"/>
+                                <Label text="ERROR" fx:id="inputTextFileError"/>
+
+                                <Button text="Create Node" onAction="#handleCreateNode"/>
+                                <Label text="Node successfully added!" fx:id="validNodeAddedLabel"/>
+
+                                <Label text="Simulation Time(seconds): "/>
+                                <TextField fx:id="simTime"/>
+
+                                <Button fx:id="startSimButton" text="Start Simulation" onAction="#startSimulationOnAction"/>
+                            </VBox>
+                            <VBox spacing="10" prefWidth="400.0" prefHeight="750.0" alignment="CENTER">
+                                <Label text="Control Area Network Protocol"/>
+                                <ListView fx:id="listCanBus" prefHeight="600.0" />
+                            </VBox>
+                        </SplitPane>
+                    </content>
+                </Tab>
+
+                <!-- Second Tab -->
+                <Tab text="Simulation">
+                    <content>
+                        <AnchorPane prefHeight="750.0" prefWidth="1200.0" />
+                    </content>
+                </Tab>
+
+                <!-- Third Tab -->
+                <Tab text="Output">
+                    <content>
+                        <AnchorPane prefHeight="750.0" prefWidth="1200.0" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
