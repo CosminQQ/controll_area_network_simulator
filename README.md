@@ -1,6 +1,5 @@
 Controller Area Network Simulator
 CAN
-Dragoi Ioan-Cosmin
 
 Introduction:
 Context:
